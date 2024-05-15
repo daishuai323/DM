@@ -1,11 +1,14 @@
 const express = require('express');
 const {PubSub} = require('@google-cloud/pubsub');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const pubSubClient = new PubSub();
 
 app.use(bodyParser.json());
+app.use(cors());  // This will allow all domains. For production, configure allowed origins.
+
 
 app.post('/publish', async (req, res) => {
   const topicName = 'projects/second-height-387103/topics/messsage';

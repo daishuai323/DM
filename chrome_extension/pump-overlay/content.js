@@ -70,6 +70,28 @@ document.querySelector('#my-form').addEventListener('submit', function (event) {
   console.log('test x');
   event.preventDefault();
   var inputValue = document.querySelector('#my-input').value;
+
+  // Prepare the data to send to the server
+  const postData = {
+    Content: inputValue,
+    UserName: "My User",
+    Source: "telegram"
+  };
+
+  // Send the data to the server
+  fetch('https://dm-nu.vercel.app/publish', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(postData),
+  })
+  .then(response => response.text())
+  .then(data => console.log(data))
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
   var randomTop = Math.floor(Math.random() * 60) + 20;
 
   var newDiv = document.createElement('div');
