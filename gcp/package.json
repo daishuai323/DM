@@ -2,9 +2,9 @@
   "name": "vercel-pubsub-server",
   "version": "1.0.0",
   "description": "Server to handle messages from a Chrome extension and publish to Google Cloud Pub/Sub",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node api/index.js"
   },
   "dependencies": {
     "@google-cloud/pubsub": "^3.3.0",
