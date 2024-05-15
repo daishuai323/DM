@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());  // This will allow all domains. For production, configure allowed origins.
 
 
-app.post('/publish', async (req, res) => {
+app.post('/pub', async (req, res) => {
   const topicName = 'projects/second-height-387103/topics/messsage';
   const dataBuffer = Buffer.from(JSON.stringify(req.body));
 
