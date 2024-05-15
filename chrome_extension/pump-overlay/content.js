@@ -79,7 +79,7 @@ document.querySelector('#my-form').addEventListener('submit', function (event) {
   };
 
   // Send the data to the server
-  fetch('https://dm-nu.vercel.app/publish', {
+  fetch('https://dm-nu.vercel.app:3000/publish', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
