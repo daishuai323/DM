@@ -73,13 +73,11 @@ document.querySelector('#my-form').addEventListener('submit', function (event) {
 
   // Prepare the data to send to the server
   const postData = {
-    Content: inputValue,
-    UserName: "My User",
-    Source: "telegram"
+    "content" : inputValue,
   };
 
   // Send the data to the server
-  fetch(' https://vercel-pubsub-server-q5v2a4doda-uc.a.run.app/pub', {
+  fetch('https://vercel-pubsub-server-q5v2a4doda-uc.a.run.app/pub', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
