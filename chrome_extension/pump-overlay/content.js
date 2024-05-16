@@ -13,7 +13,7 @@ document.querySelector('#my-overlay').style.cssText =
   'position: fixed; bottom: 0px; left: 0px; right:0; background: white; border: 1px solid black; padding: 10px;z-index: 999999;';
 
 // WebSocket connection setup
-const webSocket = new WebSocket('wss://35.232.172.237:8000');
+const webSocket = new WebSocket('wss://wss.savannah.haus/websocket/');
 
 webSocket.onopen = function(event) {
   console.log("Connection established");
@@ -29,7 +29,7 @@ webSocket.onmessage = function(event) {
     const jsonData = JSON.parse(event.data);
 
     // Extract a specific field from the JSON. Replace 'yourFieldNameHere' with the actual field name
-    const fieldValue = jsonData.meter_increment;
+    const fieldValue = jsonData.content;
     
     // Generate a new div element with the field value as its text content
     var newDiv = document.createElement('div');
@@ -79,7 +79,7 @@ document.querySelector('#my-form').addEventListener('submit', function (event) {
   };
 
   // Send the data to the server
-  fetch('http://localhost:3000/pub', {
+  fetch(' https://vercel-pubsub-server-q5v2a4doda-uc.a.run.app/pub', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
