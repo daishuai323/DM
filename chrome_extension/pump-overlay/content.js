@@ -13,7 +13,7 @@ document.querySelector('#my-overlay').style.cssText =
   'position: fixed; bottom: 0px; left: 0px; right:0; background: white; border: 1px solid black; padding: 10px;z-index: 999999;';
 
 // WebSocket connection setup
-const webSocket = new WebSocket('wss://play.savannah.haus/wss/');
+const webSocket = new WebSocket('wss://35.232.172.237:8000');
 
 webSocket.onopen = function(event) {
   console.log("Connection established");

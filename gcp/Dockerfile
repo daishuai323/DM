@@ -12,7 +12,7 @@ FROM node:${NODE_VERSION}-alpine
 
 # Use production node environment by default.
 ENV NODE_ENV production
-ENV GOOGLE_APPLICATION_CREDENTIALS="gcp.json"
+# ENV GOOGLE_APPLICATION_CREDENTIALS="gcp.json"
 
 WORKDIR /usr/src/app
 
